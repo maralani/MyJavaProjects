@@ -1,22 +1,23 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        int N = 10 + 5;
-        System.out.format("N = %d\n", N);
-        System.out.print("N = " + N + "\n" );
-        System.out.println("-------------------");
+        Scanner input = new Scanner(System.in);
 
-        N = 12345678;
-        System.out.format("N = %+,d", N);
+        System.out.print("Please Enter A Integer Number\tN = ");
+        int N = input.nextInt();
+        System.out.format("N = %d", N);
         System.out.println();
-        System.out.println("-------------------");
+        System.out.println("--------------------------------");
 
-        double pi = Math.PI;
-        System.out.format("Pi = %.2f", pi);
-
+        System.out.print("Please Enter A Float Number\tF = ");
+        float F = input.nextFloat();
+        System.out.format("N = %f", F);
+        System.out.println();
 
     }//End of main
 }//End of class
