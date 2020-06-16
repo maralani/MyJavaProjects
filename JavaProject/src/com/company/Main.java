@@ -1,23 +1,23 @@
 package com.company;
 
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
+        int N = 10;
+        int A = N;
+        System.out.format("N = %d.\n", N);
+        System.out.println("---------------------");
+        
+        int B = A++;
+        System.out.format("B = %d.\n", B);
+        System.out.format("A = %d.\n", A);
+        System.out.println("---------------------");
 
-        System.out.print("Please Enter A Integer Number\tN = ");
-        int N = input.nextInt();
-        System.out.format("N = %d", N);
-        System.out.println();
-        System.out.println("--------------------------------");
-
-        System.out.print("Please Enter A Float Number\tF = ");
-        float F = input.nextFloat();
-        System.out.format("N = %f", F);
-        System.out.println();
+        int C = ++A;
+        System.out.format("C = %d.\n", C);
+        System.out.format("A = %d.\n", A);
+        System.out.println("---------------------");
 
     }//End of main
 }//End of class
