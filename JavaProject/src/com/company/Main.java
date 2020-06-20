@@ -10,20 +10,23 @@ public class Main {
         System.out.print("Please Enter A Number\tn = ");
         int n = input.nextInt();
 
-        String result = evenOrOddNumber(n);
-        System.out.println(result);
+        int result = absolute(n);
+        System.out.format("Absolute %d is:\t%d", n , result);
+
+        System.out.println();
+        System.out.println("--------------------------------");
+
+        System.out.println("Using Math.abs:");
+        System.out.format("Absolute %d is:\t%d", n , Math.abs(n));
 
     }//End of main
-//----------------- Method: Even Or Odd Number  ---------------------
-    private static String evenOrOddNumber(int n){
-        String str;
+//----------------- Method: Absolute A Number  ---------------------
+    private static int absolute(int n){
+        int r;
 
-        if ( n % 2 == 0){
-            str = "You have entered an EVEN number!";
-        }else {
-            str = "You have entered an ODD number";
-        }
+        if ( n < 0) r = -n;
+        else r = n;
 
-        return str;
+        return r;
     }
 }//End of class
