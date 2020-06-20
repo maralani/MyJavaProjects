@@ -7,56 +7,32 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Please Enter A Number\tn = ");
+        System.out.print("Please Enter a number\tn = ");
         int n = input.nextInt();
 
-        System.out.print("1 + 2 + 3 + ... + n = ");
-        int result = seriesSum(n);
-        System.out.format("%d", result);
+        System.out.print("Please Enter the power of the number\tp = ");
+        int p = input.nextInt();
+
+        int result = pow(n , p);
+        System.out.format("%d^%d = %d", n , p , result);
 
         System.out.println();
-        System.out.println("-------------------------------");
+        System.out.println("---------------------------");
 
-        System.out.print("2 + 4 + 6 + ... + n = ");
-        result = seriesSumEven(n);
-        System.out.format("%d", result);
-
-        System.out.println();
-        System.out.println("-------------------------------");
-
-        System.out.print("1 + 3 + 5 + ... + n = ");
-        result = seriesSumOdd(n);
-        System.out.format("%d", result);
+        float m = (float) n;
+        System.out.println("Using Math.pow");
+        System.out.format("%.0f^%d = %.0f", m , p , Math.pow(m , p));
 
     }//End of main
-//----------------- Method: Sum Of Numbers  ---------------------
-    private static int seriesSum (int n){
-        int r = 0;
+//----------------  Method: The power of a number  ----------------------
+    private static int pow (int n , int p){
 
-        for (int i = 1; i <= n; i++){
-            r = r + i;
+        int r = 1;
+
+        for (int i =1; i <= p; i++){
+            r = r * n;
+
         }
-
-        return r;
-    }
-//----------------- Method: Sum Of Even Numbers  ---------------------
-    private static int seriesSumEven (int n){
-        int r = 0;
-
-        for (int i = 2; i <= n; i+=2){
-            r = r + i;
-        }
-
-        return r;
-    }
-//----------------- Method: Sum Of Odd Numbers  ---------------------
-    private static int seriesSumOdd (int n){
-        int r = 0;
-
-        for (int i = 1; i <= n; i+=2){
-            r = r + i;
-        }
-
         return r;
     }
 }//End of class
