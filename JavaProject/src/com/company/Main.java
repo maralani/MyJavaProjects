@@ -1,23 +1,29 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        int N = 10;
-        int A = N;
-        System.out.format("N = %d.\n", N);
-        System.out.println("---------------------");
-        
-        int B = A++;
-        System.out.format("B = %d.\n", B);
-        System.out.format("A = %d.\n", A);
-        System.out.println("---------------------");
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please Enter A Number\tn = ");
+        int n = input.nextInt();
 
-        int C = ++A;
-        System.out.format("C = %d.\n", C);
-        System.out.format("A = %d.\n", A);
-        System.out.println("---------------------");
+        String result = evenOrOddNumber(n);
+        System.out.println(result);
 
     }//End of main
+//----------------- Method: Even Or Odd Number  ---------------------
+    private static String evenOrOddNumber(int n){
+        String str;
+
+        if ( n % 2 == 0){
+            str = "You have entered an EVEN number!";
+        }else {
+            str = "You have entered an ODD number";
+        }
+
+        return str;
+    }
 }//End of class
