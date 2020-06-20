@@ -7,26 +7,33 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Please Enter a number\tn = ");
+        System.out.print("Please Enter A Number\tn = ");
         int n = input.nextInt();
 
-        String result = divisors(n);
+        String result = prime(n);
         System.out.println(result);
 
 
+
     }//End of main
-//----------------  Method: The Divisors of a number  ----------------------
-    private static String divisors (int n){
+//----------------  Method: Prime number  ----------------------
+    private static String prime(int n){
+        String srt = "";
 
-        String srt = "1";
+        int count = 0;
 
-        for (int i = 2; i <= n; i++){
-            if ( n % i == 0){
-                srt = srt + " , " + i;
+        for (int i = 1; i <= n; i++){
+            if ( n % i == 0) count++;
+
+            if ( count > 2){
+                srt = "The number " + n + " is not a prime number!";
+                break;
             }
+        }//End of for
 
-        }
+        if ( count == 2) srt = "The number " + n + " is a prime number!";
 
         return srt;
+
     }
 }//End of class
