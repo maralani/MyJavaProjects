@@ -10,30 +10,18 @@ public class Main {
         System.out.print("Please Enter A Number\tn = ");
         int n = input.nextInt();
 
-        String result = prime(n);
-        System.out.println(result);
-
-
+        long result = fact(n);
+        System.out.format("%d! = %d", n , result);
 
     }//End of main
-//----------------  Method: Prime number  ----------------------
-    private static String prime(int n){
-        String srt = "";
+//----------------  Method: Factorial  ----------------------
+    private static long fact(int n){
+        long r = 1;
 
-        int count = 0;
+        for (int i = 2; i <=n; i++){
+            r = r * i;
+        }
 
-        for (int i = 1; i <= n; i++){
-            if ( n % i == 0) count++;
-
-            if ( count > 2){
-                srt = "The number " + n + " is not a prime number!";
-                break;
-            }
-        }//End of for
-
-        if ( count == 2) srt = "The number " + n + " is a prime number!";
-
-        return srt;
-
+        return r;
     }
 }//End of class
