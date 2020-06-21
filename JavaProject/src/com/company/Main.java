@@ -10,38 +10,61 @@ public class Main {
         System.out.print("Pleas Enter A Number\t n = ");
         int n = input.nextInt();
 
-        String result = fib(n);
+        String result = pascalTriangle(n);
         System.out.println(result);
 
     }//End of main
-//----------------------- Method: Fibonacci Number ----------------------------
-    private static String fib(int n){
-        String srt = "";
+//----------------------- Method: Pascal triangle ----------------------------
+    private static String pascalTriangle(int n){
+        String str = "";
 
-        long temp1 = 0; //Fib1
-        long temp2 = 1; //Fib2
-        long fib = 1;
-        int i = 3;
+        for (int i = 1; i <=n; i++) {
 
-        while (true) {
+            str = str + space(n - i);
+            long fact = 1;
+            fact = fact(i);
 
-            fib = fib + temp1;
-            temp1 = temp2;
-            temp2 = fib;
+            for (int j = 0; j <= i; j++) {
 
-            if ( n == fib ) {
-                srt = i + "th number of fibonacci number is " + n + ".";
-                break;
-            }else if ( n < fib ) {
-                srt = n + " is not a fibonacci number!";
-                break;
-            } else {
-                i++;
-            }
+                int temp = 0;
+                long num = 0;
+                long factj = fact(j);
+                temp = i - j;
+                long factTemp = fact(temp);
 
-        }//End of while
+                num = fact / (factj * factTemp);
 
-        return srt;
+                str = str + num + " ";
+
+            }//End of for(j)
+
+            str = str + space(n - i - 1);
+            str = str + "\n";
+        }
+
+        return str;
     }
 
+//----------------------- Method: Space ----------------------------
+
+    private static String space(int n){
+        String str = "";
+
+        for (int i = 1; i <=n; i++){
+            str = str + " ";
+        }
+
+        return str;
+    }
+//----------------  Method: Factorial  ----------------------
+
+    private static long fact(int n){
+        long r = 1;
+
+        for (int i = 2; i <=n; i++){
+            r = r * i;
+        }
+
+        return r;
+    }
 }//End of class
