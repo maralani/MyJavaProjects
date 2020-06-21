@@ -7,21 +7,26 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Please Enter A Number\tn = ");
+        System.out.print("Pleas Enter A Number\t n = ");
         int n = input.nextInt();
 
-        long result = fact(n);
-        System.out.format("%d! = %d", n , result);
+        String result = MultiplicationTable(n);
+        System.out.println(result);
 
     }//End of main
-//----------------  Method: Factorial  ----------------------
-    private static long fact(int n){
-        long r = 1;
+//----------------  Method: Multiplication table  ----------------------
+    private static String MultiplicationTable(int n){
+        String srt = "";
 
-        for (int i = 2; i <=n; i++){
-            r = r * i;
+        for (int i = 1; i <= n; i++){
+
+            for (int j = 1; j <= n; j++){
+                srt = srt + "\t" + (i * j);
+
+            }
+            srt = srt + "\n";
         }
 
-        return r;
+        return srt;
     }
 }//End of class
