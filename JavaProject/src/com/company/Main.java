@@ -8,25 +8,28 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         System.out.print("Pleas Enter A Number\t n = ");
-        int n = input.nextInt();
+        float n = input.nextFloat();
 
-        String result = MultiplicationTable(n);
-        System.out.println(result);
+        System.out.print("Pleas Enter A Number (n / d)\t d = ");
+        int d = input.nextInt();
 
-    }//End of main
-//----------------  Method: Multiplication table  ----------------------
-    private static String MultiplicationTable(int n){
-        String srt = "";
+        float temp = n;
 
-        for (int i = 1; i <= n; i++){
+        System.out.println("-------------- While loop ---------------");
 
-            for (int j = 1; j <= n; j++){
-                srt = srt + "\t" + (i * j);
-
-            }
-            srt = srt + "\n";
+        while (n > d){
+            System.out.format("%.2f\n", n);
+            n = n /d;
         }
 
-        return srt;
-    }
+        System.out.println("------------ do_while loop --------------");
+
+        n = temp;
+
+        do {
+            System.out.format("%.2f\n", n);
+            n = n /d;
+        } while ( n > d);
+
+    }//End of main
 }//End of class
