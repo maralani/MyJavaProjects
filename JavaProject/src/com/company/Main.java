@@ -22,8 +22,8 @@ public class Main {
         String result = arrayOutput(n, A);
         System.out.println(result);
 
-        float m = main(n, A);
-        System.out.format("Mean = %.2f", m);
+        int m = max(n, A);
+        System.out.format("Max = %d", m);
 
     }//End of main
 
@@ -41,16 +41,14 @@ public class Main {
         return str;
     }
 
-//--------------------- Mean ----------------------------------------
+//--------------------- Maximum ----------------------------------------
 
-    private static float main(int n, int[] a) {
-        float r = 0;
+    private static int max(int n, int[] a) {
+        int r = 0;
 
         for (int i = 1; i <= n; i++) {
-            r = r + a[i];
+            if (a[i] > r) r = a[i];
         }
-
-        r = r / n;
 
         return r;
     }
