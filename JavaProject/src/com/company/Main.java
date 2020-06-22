@@ -22,8 +22,8 @@ public class Main {
         String result = arrayOutput(n, A);
         System.out.println(result);
 
-        int m = max(n, A);
-        System.out.format("Max = %d", m);
+        int m = min(n, A);
+        System.out.format("Min = %d", m);
 
     }//End of main
 
@@ -41,13 +41,13 @@ public class Main {
         return str;
     }
 
-//--------------------- Maximum ----------------------------------------
+//--------------------- Minimum ----------------------------------------
 
-    private static int max(int n, int[] a) {
-        int r = 0;
+    private static int min(int n, int[] a) {
+        int r = a[1];
 
-        for (int i = 1; i <= n; i++) {
-            if (a[i] > r) r = a[i];
+        for (int i = 2; i <= n; i++) {
+            if (a[i] < r) r = a[i];
         }
 
         return r;
