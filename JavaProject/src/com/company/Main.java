@@ -22,10 +22,8 @@ public class Main {
         String result = arrayOutput(n, A);
         System.out.println(result);
 
-        System.out.print("Please Enter A Number:\tm = ");
-        int m = input.nextInt();
-        result = deleteElement(m, n, A);
-        System.out.println(result);
+        float m = main(n, A);
+        System.out.format("Mean = %.2f", m);
 
     }//End of main
 
@@ -43,19 +41,18 @@ public class Main {
         return str;
     }
 
-//--------------------- Delete element in array ----------------------------------------
+//--------------------- Mean ----------------------------------------
 
-    private static String deleteElement(int m, int n, int A[]) {
-        String str = "Array[] = {";
+    private static float main(int n, int[] a) {
+        float r = 0;
 
         for (int i = 1; i <= n; i++) {
-            if (A[i] == m) continue;
-            else str = str + "  " + A[i];
+            r = r + a[i];
         }
 
-        str = str + "  }";
+        r = r / n;
 
-        return str;
+        return r;
     }
 
 }//End of class
