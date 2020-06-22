@@ -21,6 +21,12 @@ public class Main {
 
         String result = arrayOutput(n, A);
         System.out.println(result);
+
+        System.out.print("Please Enter A Number:\tm = ");
+        int m = input.nextInt();
+        result = index(m, n, A);
+        System.out.println(result);
+
     }//End of main
 
 //---------------------- Method: Output Array---------------------------
@@ -33,6 +39,18 @@ public class Main {
         }
 
         str = str + "  }";
+
+        return str;
+    }
+
+//--------------------- Index ----------------------------------------
+
+    private static String index(int m, int n, int A[]){
+        String str = "index " + m + " is:  ";
+
+        for (int i = 1; i <= n; i++) {
+            if ( A[i] == m) str = str + i + "  ";
+        }
 
         return str;
     }
