@@ -24,7 +24,7 @@ public class Main {
 
         System.out.print("Please Enter A Number:\tm = ");
         int m = input.nextInt();
-        result = index(m, n, A);
+        result = deleteElement(m, n, A);
         System.out.println(result);
 
     }//End of main
@@ -43,15 +43,19 @@ public class Main {
         return str;
     }
 
-//--------------------- Index ----------------------------------------
+//--------------------- Delete element in array ----------------------------------------
 
-    private static String index(int m, int n, int A[]){
-        String str = "index " + m + " is:  ";
+    private static String deleteElement(int m, int n, int A[]) {
+        String str = "Array[] = {";
 
         for (int i = 1; i <= n; i++) {
-            if ( A[i] == m) str = str + i + "  ";
+            if (A[i] == m) continue;
+            else str = str + "  " + A[i];
         }
+
+        str = str + "  }";
 
         return str;
     }
+
 }//End of class
