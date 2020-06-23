@@ -7,28 +7,35 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
+        System.out.print("Please Enter length of Array n = ");
+        int n = input.nextInt();
+
+        int A[] = new int [n+1];
+        A[0] = n;
 
         Random Generator = new Random();
-        int R = Generator.nextInt();
-        System.out.format("R = %d.\t A random number", R);
-        System.out.println();
-        System.out.println("--------------------------------------------------------");
 
-        R = Generator.nextInt(100);
-        System.out.format("R = %d.\t A random number between 1 and 100", R);
-        System.out.println();
-        System.out.println("--------------------------------------------------------");
+        for (int i = 1; i <= n; i++) {
+            int R = Generator.nextInt(100);
+            A[i] = R;
+        }
 
-        System.out.println("Create a random number between Min and Max");
-        System.out.print("Please Enter A Minimum Number Min = ");
-        int Min = input.nextInt();
-        System.out.print("Please Enter A Maximum Number Max = ");
-        int Max = input.nextInt();
-        System.out.println();
-
-        R = Generator.nextInt( Max - Min + 1) + Min;
-        System.out.format("R = %d.\t A random number between %d and %d\"", R, Min, Max);
-        System.out.println();
+        String result = arrayOutput(n, A);
+        System.out.println(result);
 
     }//End of main
+
+//---------------------- Method: Output Array---------------------------
+    private static String arrayOutput(int n, int A[]){
+
+        String str = "Array[] = {";
+
+        for (int i = 1; i <= n; i++) {
+            str = str + "  " +  A[i];
+        }
+
+        str = str + "  }";
+
+        return str;
+    }
 }//End of class
