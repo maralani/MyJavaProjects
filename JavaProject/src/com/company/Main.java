@@ -10,49 +10,31 @@ public class Main {
         System.out.print("Please Enter A String: str = ");
         String str = input.nextLine();
 
-        System.out.print("Please Enter A String subStr = ");
-        String subStr = input.nextLine();
-
-        System.out.print("Please Enter A String repStr = ");
-        String repStr = input.nextLine();
+        System.out.print("Please Enter A Character: ch = ");
+        String ch = input.next();
 
         String result = "";
-        result = replace(str, subStr, repStr);
+        result = indexOf(str, ch);
         System.out.println(result);
-
 
     }//End of main
 
-//--------------------------- String: Replace ------------------------------
+//--------------------------- String: Index of ------------------------------
 
-    private static String replace(String s, String subS, String repS){
+    private static String indexOf(String s , String c){
 
         String str = "";
 
-        s = s.toLowerCase();
-        subS = subS.toLowerCase();
-        repS = repS.toLowerCase();
         int flag = 0;
-        int temp = 0;
         for (int i = 0; i <s.length(); i++) {
-            temp = i;
-            flag = 0;
-            for (int j = 0; j <subS.length(); j++) {
-                if (s.charAt(temp) == subS.charAt(j) && i <= s.length()-subS.length()) {
-                    temp++;
-                    flag++;
-                }else {
-                    break;
-                }
+            if ((s.charAt(i)) == c.charAt(0)) {
+                str = str + "Index " + c + " = " + (i+1);
+                flag++;
             }
-            if (flag == subS.length()) {
-                i = temp - 1;
-                for (int k = 0; k <repS.length(); k++) {
-                    str = str + repS.charAt(k);
-                }
-                continue;
-            }
-            str = str + s.charAt(i);
+        }
+
+        if ( flag == 0) {
+            str = "Char " + c + "there is not iN this string!";
         }
 
         return str;
