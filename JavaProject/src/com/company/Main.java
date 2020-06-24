@@ -11,21 +11,21 @@ public class Main {
         String str = input.nextLine();
 
         String result = "";
-        result = toLowerCase(str);
+        result = toUpperCase(str);
         System.out.println(result);
 
-        // s = s.toLowerCase
+        // s = s.toUpperCase();
     }//End of main
 
-//--------------------------- String: ToLowerCase ------------------------------
+//--------------------------- String: ToUpperCase ------------------------------
 
-    private static String toLowerCase(String s){
+    private static String toUpperCase(String s){
 
         String str = "";
 
         for (int i = 0; i < s.length() ; i++) {
-            if (s.charAt(i) >= 65 && s.charAt(i) <= 90) {
-                str = str + (char) (s.charAt(i) + 32);
+            if (s.charAt(i) >= 97 && s.charAt(i) <= 122) {
+                str = str + (char) (s.charAt(i) - 32);
             }else {
                 str = str + s.charAt(i);
             }
@@ -35,3 +35,4 @@ public class Main {
     }
 
 }//End of class
+
