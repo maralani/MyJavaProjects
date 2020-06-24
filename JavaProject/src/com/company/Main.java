@@ -10,44 +10,28 @@ public class Main {
         System.out.print("Please Enter A String: str = ");
         String str = input.nextLine();
 
-        String result = "";
-        result = upper(str);
-        System.out.println(result);
+        int result = 0;
+        result = parsInt(str);
+        System.out.format("int: %d",result);
+        System.out.println();
+
+		result = Integer.parseInt(str);
+        System.out.format("parseint: %d", result);
 
     }//End of main
 
-//--------------------------- String: Upper ------------------------------
+//--------------------------- String: ParsInt ------------------------------
 
-    private static String upper(String s){
+    private static int parsInt(String s){
 
-        String str = "";
-
-        char c;
-        for (int i = 0; i <s.length(); i++) {
-            if ( i == 0) {
-                c = s.charAt(i);
-                if ( c >= 97 && c <=122){
-                    c= (char) (c - 32);
-                    str = str + c;
-                    continue;
-                }
-
-            }
-
-            if (s.charAt(i) == ' ') {
-                str = str + " ";
-                c = s.charAt(i+1);
-                if ( c >= 97 && c <=122){
-                    c = (char) (c - 32);
-                    str = str + c;
-                    i++;
-                }
-            }else {
-                str = str + s.charAt(i);
-            }
+        int r = 0;
+        int temp = 1;
+        for (int i = s.length()-1; i >=0; i--) {
+            r = r + ((s.charAt(i)) - 48) * temp;
+            temp = temp * 10;
         }
 
-        return str;
+        return r;
     }
 
 }//End of class
