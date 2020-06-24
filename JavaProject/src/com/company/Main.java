@@ -11,21 +11,40 @@ public class Main {
         String str = input.nextLine();
 
         String result = "";
-        result = deleteDigits(str);
+        result = upper(str);
         System.out.println(result);
 
     }//End of main
 
-//--------------------------- Delete digits ------------------------------
+//--------------------------- String: Upper ------------------------------
 
-    private static String deleteDigits(String s){
+    private static String upper(String s){
 
         String str = "";
+
+        char c;
         for (int i = 0; i <s.length(); i++) {
-            if (s.charAt(i) >= '0' && s.charAt(i) <= '9') {
-                continue;
+            if ( i == 0) {
+                c = s.charAt(i);
+                if ( c >= 97 && c <=122){
+                    c= (char) (c - 32);
+                    str = str + c;
+                    continue;
+                }
+
             }
-            str = str + s.charAt(i);
+
+            if (s.charAt(i) == ' ') {
+                str = str + " ";
+                c = s.charAt(i+1);
+                if ( c >= 97 && c <=122){
+                    c = (char) (c - 32);
+                    str = str + c;
+                    i++;
+                }
+            }else {
+                str = str + s.charAt(i);
+            }
         }
 
         return str;
