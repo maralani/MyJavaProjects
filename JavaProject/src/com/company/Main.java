@@ -10,29 +10,29 @@ public class Main {
         System.out.print("Please Enter A String: str = ");
         String str = input.nextLine();
 
+        System.out.print("Please Enter A Number n = ");
+        int n = input.nextInt();
+
         String result = "";
-        result = toUpperCase(str);
+        result = setW(str, n);
         System.out.println(result);
 
-        // s = s.toUpperCase();
+
     }//End of main
 
-//--------------------------- String: ToUpperCase ------------------------------
+//--------------------------- String: setW ------------------------------
 
-    private static String toUpperCase(String s){
+    private static String setW(String s, int n){
 
         String str = "";
 
-        for (int i = 0; i < s.length() ; i++) {
-            if (s.charAt(i) >= 97 && s.charAt(i) <= 122) {
-                str = str + (char) (s.charAt(i) - 32);
-            }else {
-                str = str + s.charAt(i);
-            }
+        for (int i = 0; i < n - s.length() ; i++) {
+            str= str + ' ';
         }
+
+        str = str + s;
 
         return str;
     }
 
 }//End of class
-
