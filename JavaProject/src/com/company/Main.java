@@ -10,32 +10,38 @@ public class Main {
         System.out.print("Please Enter A String: str = ");
         String str = input.nextLine();
 
-        System.out.print("Please Enter A Character: ch = ");
-        String ch = input.next();
+        System.out.print("Please Enter A Split: ");
+        char split = input.nextLine().charAt(0);
 
         String result = "";
-        result = indexOf(str, ch);
+        result = split(str, split);
         System.out.println(result);
+
 
     }//End of main
 
-//--------------------------- String: Index of ------------------------------
+//--------------------------- String: Split ------------------------------
 
-    private static String indexOf(String s , String c){
+    private static String split(String s, char split){
 
         String str = "";
+        int n = s.length();
+        String A[] = new String [n+1];
+        for (int i = 1; i <= n; i++) {
+            A[i] = "";
+        }
 
-        int flag = 0;
+        int j =1;
         for (int i = 0; i <s.length(); i++) {
-            if ((s.charAt(i)) == c.charAt(0)) {
-                str = str + "Index " + c + " = " + (i+1);
-                flag++;
+            if (s.charAt(i) != split) {
+                A[j] = A[j] + s.charAt(i);
+            }else {
+
+                str = str + A[j] + "\n";
+                j++;
             }
         }
-
-        if ( flag == 0) {
-            str = "Char " + c + "there is not iN this string!";
-        }
+        str = str + A[j];
 
         return str;
     }
