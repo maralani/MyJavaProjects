@@ -11,19 +11,24 @@ public class Main {
         String str = input.nextLine();
 
         String result = "";
-        result = reverse(str);
+        result = toLowerCase(str);
         System.out.println(result);
 
+        // s = s.toLowerCase
     }//End of main
 
-//--------------------------- String: Reverse ------------------------------
+//--------------------------- String: ToLowerCase ------------------------------
 
-    private static String reverse(String s){
+    private static String toLowerCase(String s){
 
         String str = "";
 
-        for (int i = s.length()-1; i >= 0 ; i--) {
-            str = str + s.charAt(i);
+        for (int i = 0; i < s.length() ; i++) {
+            if (s.charAt(i) >= 65 && s.charAt(i) <= 90) {
+                str = str + (char) (s.charAt(i) + 32);
+            }else {
+                str = str + s.charAt(i);
+            }
         }
 
         return str;
