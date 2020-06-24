@@ -10,28 +10,23 @@ public class Main {
         System.out.print("Please Enter A String: str = ");
         String str = input.nextLine();
 
-        int result = 0;
-        result = parsInt(str);
-        System.out.format("int: %d",result);
-        System.out.println();
-
-		result = Integer.parseInt(str);
-        System.out.format("parseint: %d", result);
+        String result = "";
+        result = reverse(str);
+        System.out.println(result);
 
     }//End of main
 
-//--------------------------- String: ParsInt ------------------------------
+//--------------------------- String: Reverse ------------------------------
 
-    private static int parsInt(String s){
+    private static String reverse(String s){
 
-        int r = 0;
-        int temp = 1;
-        for (int i = s.length()-1; i >=0; i--) {
-            r = r + ((s.charAt(i)) - 48) * temp;
-            temp = temp * 10;
+        String str = "";
+
+        for (int i = s.length()-1; i >= 0 ; i--) {
+            str = str + s.charAt(i);
         }
 
-        return r;
+        return str;
     }
 
 }//End of class
