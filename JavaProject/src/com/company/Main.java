@@ -13,21 +13,25 @@ public class Main {
         System.out.print("Please Enter A String subStr = ");
         String subStr = input.nextLine();
 
+        System.out.print("Please Enter A String repStr = ");
+        String repStr = input.nextLine();
+
         String result = "";
-        result = remove(str, subStr);
+        result = replace(str, subStr, repStr);
         System.out.println(result);
 
 
     }//End of main
 
-//--------------------------- String: Remove ------------------------------
+//--------------------------- String: Replace ------------------------------
 
-    private static String remove(String s, String subS){
+    private static String replace(String s, String subS, String repS){
 
         String str = "";
 
         s = s.toLowerCase();
         subS = subS.toLowerCase();
+        repS = repS.toLowerCase();
         int flag = 0;
         int temp = 0;
         for (int i = 0; i <s.length(); i++) {
@@ -43,6 +47,9 @@ public class Main {
             }
             if (flag == subS.length()) {
                 i = temp - 1;
+                for (int k = 0; k <repS.length(); k++) {
+                    str = str + repS.charAt(k);
+                }
                 continue;
             }
             str = str + s.charAt(i);
